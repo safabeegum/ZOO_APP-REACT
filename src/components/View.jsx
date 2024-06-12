@@ -17,7 +17,7 @@ const View = () => {
         useEffect(() => {fetchData()},[])
   return (
     <div>
-        <Navbar/>
+        <Navbar/><br></br>
         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -42,11 +42,14 @@ const View = () => {
             <tr>
               
                             <td>{value.animalid}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{value.name}</td>
+                            <td>{value.description}</td>
+                            <td>{value.type}</td>
+                            <td>{value.ctype}</td>
+                            <td>{value.cageid}</td>
+                            <td>{value.age}</td>
+                            <td>{value.date}</td>
+                            <td>{value.caretaker}</td>
                           </tr>
                         </tbody>
         }
