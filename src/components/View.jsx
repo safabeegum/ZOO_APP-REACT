@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
+import axios from 'axios'
 
 const View = () => {
+    const[data,changeData]=useState([])
+
+        const fetchData= () => {
+            axios.get("").then((response)=>
+                {
+                    console.log(response.data)
+                    changeData(response.data)
+                }
+            ).catch().finally()
+        }
+
+        useEffect(() => {fetchData()},[])
   return (
     <div>
-        <Navbar/>
+        <Navbar/><br></br>
         <div className="container">
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
@@ -22,17 +35,27 @@ const View = () => {
       <th scope="col">CARETAKER</th>
     </tr>
   </thead>
-  <tbody>
-  <tr>
-    
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
+  {
+    data.map(
+        (value,index) => {
+            return <tbody>
+            <tr>
+              
+                            <td>{value.animalid}</td>
+                            <td>{value.name}</td>
+                            <td>{value.description}</td>
+                            <td>{value.type}</td>
+                            <td>{value.ctype}</td>
+                            <td>{value.cageid}</td>
+                            <td>{value.age}</td>
+                            <td>{value.date}</td>
+                            <td>{value.caretaker}</td>
+                          </tr>
+                        </tbody>
+        }
+    )
+  }
+  
 </table>
                 </div>
             </div>
