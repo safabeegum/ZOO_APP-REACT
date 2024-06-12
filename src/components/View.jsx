@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
+import axios from 'axios'
 
 const View = () => {
+    const[data,changeData]=useState([])
+
+        const fetchData= () => {
+            axios.get("").then((response)=>
+                {
+                    console.log(response.data)
+                    changeData(response.data)
+                }
+            ).catch().finally()
+        }
+
+        useEffect(() => {fetchData()},[])
   return (
     <div>
         <Navbar/>
@@ -22,17 +35,24 @@ const View = () => {
       <th scope="col">CARETAKER</th>
     </tr>
   </thead>
-  <tbody>
-  <tr>
-    
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
+  {
+    data.map(
+        (value,index) => {
+            return <tbody>
+            <tr>
+              
+                            <td>{value.animalid}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+        }
+    )
+  }
+  
 </table>
                 </div>
             </div>
