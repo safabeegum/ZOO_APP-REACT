@@ -24,7 +24,7 @@ const Search = () => {
         )
     }
 
-        const deleteCourse=(id) => {
+        const deleteAnimal=(id) => {
             let input = {"_id": id}
             axios.post("",input).then(
                 (response) => {
@@ -74,7 +74,7 @@ const Search = () => {
     </tr>
   </thead>
   {
-    data.map(
+    result.map(
         (value,index) => {
             return <tbody>
             <tr>
@@ -88,6 +88,7 @@ const Search = () => {
                             <td>{value.age}</td>
                             <td>{value.date}</td>
                             <td>{value.caretaker}</td>
+                            <td><button className="btn btn-danger" onClick={() => {deleteAnimal(value._id)}}>DELETE</button></td>
                           </tr>
                         </tbody>
         }
