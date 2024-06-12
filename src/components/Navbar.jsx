@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Navbrar = () => {
+const Navbar = () => {
   return (
     <div>
          <nav class="navbar navbar-expand-lg bg-warning">
@@ -12,16 +13,13 @@ const Navbrar = () => {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
       <li class="nav-item">
-          <Link class="nav-link" to="/">ADD ANIMALS</Link>
+          <Link class="nav-link" to="/">HOME</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/">ADD ANIMALS</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/search">SEARCH ANIMALS</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/delete">DELETE ANIMALS</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to="/viewall">VIEW ANIMALS</Link>
@@ -34,4 +32,4 @@ const Navbrar = () => {
   )
 }
 
-export default Navbrar
+export default Navbar
