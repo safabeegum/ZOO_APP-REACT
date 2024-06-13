@@ -17,7 +17,7 @@ const Search = () => {
 
     const readValue=() => {
         console.log(data)
-        axios.post("",data).then(
+        axios.post("http://localhost:8081/search",data).then(
             (response) => {
                 setresult(response.data)
             }
@@ -26,7 +26,7 @@ const Search = () => {
 
         const deleteAnimal=(id) => {
             let input = {"_id": id}
-            axios.post("",input).then(
+            axios.post("http://localhost:8081/delete",input).then(
                 (response) => {
                     console.log(response.data)
                     if(response.data.status=="success")
